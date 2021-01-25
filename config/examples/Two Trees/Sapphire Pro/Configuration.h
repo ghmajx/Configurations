@@ -24,8 +24,8 @@
 #define CONFIG_EXAMPLES_DIR "Two Trees/Sapphire Pro"
 
 //#define SPRO_INVERTED_E // Enable if the extruder runs the wrong way
-//#define SPRO_TMC2209 // Enable for the TMC2209 driver version
-//#define SPRO_BLTOUCH // Enable if you want to use BLTOUCH
+#define SPRO_TMC2209 // Enable for the TMC2209 driver version
+#define SPRO_BLTOUCH // Enable if you want to use BLTOUCH
 
 /**
  * Configuration.h
@@ -494,13 +494,13 @@
   #if ENABLED(PID_PARAMS_PER_HOTEND)
     // Specify between 1 and HOTENDS values per array.
     // If fewer than EXTRUDER values are provided, the last element will be repeated.
-    #define DEFAULT_Kp_LIST {   8.16,   8.16 }
-    #define DEFAULT_Ki_LIST {   0.37,   0.37 }
-    #define DEFAULT_Kd_LIST {  44.46,  44.46 }
+    #define DEFAULT_Kp_LIST {   14.15,   14.15 }
+    #define DEFAULT_Ki_LIST {   0.94,   0.94 }
+    #define DEFAULT_Kd_LIST {  53.04,  53.04 }
   #else
-    #define DEFAULT_Kp   8.16
-    #define DEFAULT_Ki   0.37
-    #define DEFAULT_Kd  44.46
+    #define DEFAULT_Kp   14.15
+    #define DEFAULT_Ki   0.94
+    #define DEFAULT_Kd  53.04
   #endif
 #endif // PIDTEMP
 
@@ -679,9 +679,9 @@
  * :['A4988', 'A5984', 'DRV8825', 'LV8729', 'L6470', 'L6474', 'POWERSTEP01', 'TB6560', 'TB6600', 'TMC2100', 'TMC2130', 'TMC2130_STANDALONE', 'TMC2160', 'TMC2160_STANDALONE', 'TMC2208', 'TMC2208_STANDALONE', 'TMC2209', 'TMC2209_STANDALONE', 'TMC26X', 'TMC26X_STANDALONE', 'TMC2660', 'TMC2660_STANDALONE', 'TMC5130', 'TMC5130_STANDALONE', 'TMC5160', 'TMC5160_STANDALONE']
  */
 #if ENABLED(SPRO_TMC2209)
-  #define X_DRIVER_TYPE TMC2209_STANDALONE
-  #define Y_DRIVER_TYPE TMC2209_STANDALONE
-  #define Z_DRIVER_TYPE TMC2209_STANDALONE
+  #define X_DRIVER_TYPE TMC2209
+  #define Y_DRIVER_TYPE TMC2209
+  #define Z_DRIVER_TYPE TMC2209
 #else
   #define X_DRIVER_TYPE TMC2208_STANDALONE
   #define Y_DRIVER_TYPE TMC2208_STANDALONE
@@ -693,7 +693,7 @@
 //#define Z3_DRIVER_TYPE A4988
 //#define Z4_DRIVER_TYPE A4988
 #if ENABLED(SPRO_TMC2209)
-  #define E0_DRIVER_TYPE TMC2209_STANDALONE
+  #define E0_DRIVER_TYPE TMC2209
 #else
   #define E0_DRIVER_TYPE A4988
 #endif
@@ -1347,7 +1347,7 @@
 //#define AUTO_BED_LEVELING_LINEAR
 //#define AUTO_BED_LEVELING_UBL
 #if ENABLED(SPRO_BLTOUCH)
-  #define AUTO_BED_LEVELING_BILINEAR
+  #define AUTO_BED_LEVELING_UBL
 #else
   #define MESH_BED_LEVELING
 #endif
@@ -1394,7 +1394,7 @@
   /**
    * Enable the G26 Mesh Validation Pattern tool.
    */
-  //#define G26_MESH_VALIDATION
+  #define G26_MESH_VALIDATION
   #if ENABLED(G26_MESH_VALIDATION)
     #define MESH_TEST_NOZZLE_SIZE    0.4  // (mm) Diameter of primary nozzle.
     #define MESH_TEST_LAYER_HEIGHT   0.2  // (mm) Default layer height for the G26 Mesh Validation Tool.
