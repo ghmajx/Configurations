@@ -76,7 +76,7 @@
 // @section info
 
 // Author info of this build printed to the host during boot and M115
-#define STRING_CONFIG_H_AUTHOR "(ils15, default config)" // Who made the changes.
+#define STRING_CONFIG_H_AUTHOR "(Crotus)" // Crotus, who made the changes.
 //#define CUSTOM_VERSION_FILE Version.h // Path from the root directory (no quotes)
 
 /**
@@ -98,6 +98,9 @@
 
 // Show the bitmap in Marlin/_Statusscreen.h on the status screen.
 //#define CUSTOM_STATUS_SCREEN_IMAGE
+
+// Custom overwrites @Crotus
+#define COLOR_BACKGROUND 0x0000 //LCD background color
 
 // @section machine
 
@@ -138,7 +141,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "Sapphire Pro"
+#define CUSTOM_MACHINE_NAME "Crotus' Sapphire Pro"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -2504,7 +2507,7 @@
  //#define TOUCH_ORIENTATION TOUCH_LANDSCAPE
 
   #if ENABLED(TFT_COLOR_UI)
-    //#define SINGLE_TOUCH_NAVIGATION
+    #define SINGLE_TOUCH_NAVIGATION
   #endif
 #endif
 
